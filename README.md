@@ -17,3 +17,4 @@ or just `launch.sh`
 $ cd /opt/tests
 $ sh test.sh
 ```
+Note that the tests are not yet 100% working...
