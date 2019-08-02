@@ -15,7 +15,7 @@ socket.connect(connection_uri)
 
 # launch the julia listener
 print("Opening the julia listener")
-pong = subprocess.Popen(["julia", "julia/pong.jl"])
+pong = subprocess.Popen(["julia", "../julia/pong.jl"])
 
 # send a message
 message = "Hello"
