@@ -12,13 +12,6 @@ $ docker run -it --rm -v $(pwd):/opt/tests --workdir /opt/tests gridlabd-julia
 ```
 or just `launch.sh`
 
-### To run some tests from within the container after launching
-```
-$ cd /opt/tests
-$ sh test.sh
-```
-Note that the tests are not yet 100% working...
-
 ### To run the julia server tests
 
 ```
