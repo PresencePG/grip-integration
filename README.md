@@ -18,3 +18,19 @@ $ cd /opt/tests
 $ sh test.sh
 ```
 Note that the tests are not yet 100% working...
+
+### To run the julia server tests
+
+```
+$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-julia
+
+[root@<docker-id> python]# python julia_server.test.py
+```
+
+### To run the example Gridlab-D start script and on_commit hooks
+
+```
+$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-julia
+
+[root@<docker-id> python]# python run_gridlabd_main.py
+```
