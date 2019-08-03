@@ -22,7 +22,7 @@ class JuliaServer:
         ])
         try:
             julia_client.connect()
-            res = julia_client.send_poll('ping')
+            res = julia_client.send('ping')
             self._server_process = server_process
         except Exception as err:
             server_process.kill()

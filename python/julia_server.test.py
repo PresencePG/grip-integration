@@ -12,7 +12,7 @@ class TestJuliaServer(unittest.TestCase):
 
     def test_server_can_receive_messages(self):
         with JuliaServer() as server:
-            res = self.client.send('ping', block=False)
+            res = self.client.send('ping')
             self.assertEqual(res, b'pong')
 
 
