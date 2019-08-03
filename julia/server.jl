@@ -8,10 +8,9 @@ connection_uri = ENV["SERVER_LISTEN_URI"]
 reciever = Socket(ctx, PAIR)
 ZMQ.bind(reciever, connection_uri)
 
-println("Listening for up to 10 seconds . . .")
+println("Julia ready . . .")
 
-start = time()
-while time() - start < 10.
+while true
     raw_msq = recv(reciever, String)
     msg = JSON.parse(raw_msq)
     # Do work here
@@ -20,5 +19,3 @@ while time() - start < 10.
     send(reciever, "Recieved message sent at '$(sent_at)'")
     println("$(sent_at): $(message)")
 end
-
-close(reciever)
