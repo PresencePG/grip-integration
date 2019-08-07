@@ -1,4 +1,4 @@
-FROM gridlabd/slac-master:latest
+FROM gridlabd/slac-master:190805
 
 # copy things
 COPY . /opt/build

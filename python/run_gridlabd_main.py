@@ -12,7 +12,7 @@ dataloc = '../test_data/'
 datadump = process_payload(dataloc)
 
 # Gridlab-D set up
-
+print("Running an example that is illustrates the julia/python connection")
 with JuliaServer() as server:
     print('Starting up JuliaServer. . . ')
     on_commit(datadump)
