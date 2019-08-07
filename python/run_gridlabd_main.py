@@ -5,10 +5,14 @@ import time
 from julia_server import JuliaServer
 from on_commit import on_commit
 
+from process_payload import *
+
+# get data from test_data directory and format into correct dict structure with process_payload
+dataloc = '../test_data/'
+datadump = process_payload(dataloc)
+
 # Gridlab-D set up
 
 with JuliaServer() as server:
-    print('Running gridlabd.start(\'wait\')')
-    for iteration in range(0, 10):
-        on_commit(f'Gridlab-D iteration {iteration}')
-        time.sleep(1)
+    print('Starting up JuliaServer. . . ')
+    on_commit(datadump)

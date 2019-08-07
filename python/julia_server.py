@@ -32,4 +32,3 @@ class JuliaServer:
         if self._server_process:
             self._server_process.kill()
         self._server_process = None
-

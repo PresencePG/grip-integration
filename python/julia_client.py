@@ -31,4 +31,14 @@ class JuliaClient:
         response = self._socket.recv()
         return response
 
+    def send_data(self, dict):
+        timestamp = time.ctime()
+        dict.update({'message':'data collected',
+                            'at':timestamp})
+        self._socket.send_string(json_dumps(
+            dict
+        ))
+        response = self._socket.recv()
+        return response
+
 julia_client = JuliaClient()
