@@ -20,7 +20,7 @@ $ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-
 [root@<docker-id> python]# python julia_server.test.py
 ```
 
-### To run the example Gridlab-D start script and on_commit hooks
+### To run the example Gridlab-D start script and on_commit hooks - tests islanding optimization in Julia
 
 ```
 $ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-slacgrip
