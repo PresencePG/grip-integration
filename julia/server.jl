@@ -1,3 +1,4 @@
+println("Julia server is getting up and running...")
 using ZMQ
 using JSON
 
@@ -19,7 +20,10 @@ while true
     # Do work here
     sent_at = msg["at"]
     message = msg["message"]
-    if haskey(msg,"branch_id")
+    #print(message)
+    if message == "ping"
+        send(receiver, "pong")
+    elseif haskey(msg,"branch_id")
         (branch,T,F,R,X,brst,switchable,G,Pg0,Pg_min,Pg_max,ge_st,D,Pd0) = read_payload(msg)
         println("payload received.")
 
@@ -64,6 +68,6 @@ while true
         send(receiver, JSON.json(branch_results))
         continue
     end
-    send(receiver, "Recieved message sent at '$(sent_at)'")
-    println("$(sent_at): $(message)")
+    #send(receiver, "Recieved message sent at '$(sent_at)'")
+    #println("$(sent_at): $(message)")
 end
