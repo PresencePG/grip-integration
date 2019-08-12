@@ -1,3 +1,3 @@
 #! /bin/sh
 
-docker run -it --rm -v $(pwd):/opt/tests --workdir /opt/tests gridlabd-julia
+docker run -it --rm -v $(pwd):/opt/tests --workdir /opt/tests gridlabd-slacgrip
