@@ -1,4 +1,6 @@
-FROM gridlabd/slac-master:latest
+FROM gridlabd/slac-master:190805
+
+RUN yum -y install curl
 
 # copy things
 COPY . /opt/build
@@ -6,14 +8,9 @@ COPY . /opt/build
 # get system packages as needed
 RUN yum -y install wget
 
-# get the right python packages installed
-RUN ln -sf /usr/bin/python3.6 /usr/bin/python
-
 WORKDIR /opt/build/python
 
-RUN python -m pip install --upgrade pip
-
-RUN python -m pip install -r py_requirements.txt
+RUN pip3 install -r py_requirements.txt
 
 # install julia
 WORKDIR /opt/julia
@@ -35,4 +32,3 @@ ENV SERVER_LISTEN_URI 'tcp://127.0.0.1:5001'
 # set the working directory back to where gridlabd/slac-master had it originally
 WORKDIR /tmp/
 
-ENTRYPOINT ["/bin/bash"]
