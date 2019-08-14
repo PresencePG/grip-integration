@@ -31,4 +31,3 @@ ENV SERVER_LISTEN_URI 'tcp://127.0.0.1:5001'
 
 # set the working directory back to where gridlabd/slac-master had it originally
 WORKDIR /tmp/
-

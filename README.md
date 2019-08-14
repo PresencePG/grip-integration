@@ -1,8 +1,8 @@
-This repository holds the files needed to set up a docker container for the grip-absorption/gridlab-d simulation.
+This repository holds the files needed to set up a docker container for the grip-absorption/gridlab-d simulation, which is known as slacgrip/master.
 
 ### To build the container do the following
 ```
-$ docker build -t gridlabd-slacgrip .
+$ docker build -t slacgrip/master .
 ```
 or just `build.sh`
 
