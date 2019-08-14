@@ -9,3 +9,15 @@ Pkg.add("CSV")
 Pkg.add("DataFrames")
 Pkg.add("Test")
 Pkg.add("SparseArrays")
+
+using JSON
+using ZMQ
+using JuMP
+using Cbc
+using Clp
+using CSV
+using DataFrames
+using Test
+using SparseArrays
+
+println("Julia package installation complete.")
