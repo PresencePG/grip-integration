@@ -8,28 +8,28 @@ or just `build.sh`
 
 ### To launch the container starting at the test directory
 ```
-$ docker run -it --rm -v $(pwd):/opt/tests --workdir /opt/tests gridlabd-slacgrip
+$ docker run -it --rm -v $(pwd):/opt/tests --workdir /opt/tests slacgrip/master
 ```
 or just `launch.sh`
 
 ### To run the julia server tests
 
 ```
-$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-slacgrip
+$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python slacgrip/master
 
-[root@<docker-id> python]# python julia_server.test.py
+[root@<docker-id> python]# python3 julia_server.test.py
 ```
 
 ### To run the example Gridlab-D start script and on_commit hooks - tests islanding optimization in Julia
 
 ```
-$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python gridlabd-slacgrip
+$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/python slacgrip/master
 
-[root@<docker-id> python]# python run_gridlabd_main.py
+[root@<docker-id> python]# python3 run_gridlabd_main.py
 ```
 ### To run a test of optimization in julia
 ```
-$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/julia gridlabd-slacgrip
+$ docker run -it --rm -v $(pwd):/opt/build --workdir /opt/build/julia slacgrip/master
 
 [root@<docker-id> python]# julia test_jump.jl
 ```
