@@ -10,7 +10,7 @@
 #############################################################################
 # Slightly modified by Paul Hines, Packetized Energy
 
-using JuMP, Clp, Test
+using JuMP, GLPK, Test
 
 """
     example_basic([; verbose = true])
@@ -22,7 +22,7 @@ Formulate and solve a simple LP:
 If `verbose = true`, print the model and the solution.
 """
 function example_basic(; verbose = true)
-    model = Model(with_optimizer(Clp.Optimizer))
+    model = Model(with_optimizer(GLPK.Optimizer))
 
     @variable(model, 0 <= x <= 2)
     @variable(model, 0 <= y <= 30)
