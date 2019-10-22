@@ -6,6 +6,7 @@ Pkg.add("JSON")
 Pkg.add("ZMQ")
 Pkg.add("JuMP")
 Pkg.add("Cbc")
+Pkg.add("Ipopt")
 Pkg.add("GLPK")
 Pkg.add("CSV")
 Pkg.add("DataFrames")
@@ -17,6 +18,7 @@ using JSON
 using ZMQ
 using JuMP
 using Cbc
+using Ipopt
 using GLPK
 using CSV
 using DataFrames
