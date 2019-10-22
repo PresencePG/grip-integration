@@ -1,4 +1,4 @@
-FROM gridlabd/slac-master:191009
+FROM gridlabd/slac-master:191022
 
 RUN yum -y install curl
 
