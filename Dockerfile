@@ -1,4 +1,5 @@
-FROM gridlabd/slac-master:191022
+#FROM gridlabd/slac-master:191022
+FROM slacgismo/gridlabd:latest
 
 RUN yum -y install curl
 
@@ -17,9 +18,9 @@ RUN yum -y install wget
 
 # change dir and install julia
 WORKDIR /opt/julia
-RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.1/julia-1.1.1-linux-x86_64.tar.gz \
-    && tar xvzf julia-1.1.1-linux-x86_64.tar.gz \
-    && ln -sf /opt/julia/julia-1.1.1/bin/julia /usr/bin/julia
+RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.3/julia-1.3.1-linux-x86_64.tar.gz \
+    && tar xvzf julia-1.3.1-linux-x86_64.tar.gz \
+    && ln -sf /opt/julia/julia-1.3.1/bin/julia /usr/bin/julia
 
 # initialize julia to get the required packages
 WORKDIR /opt/build/julia

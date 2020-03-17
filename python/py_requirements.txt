@@ -1,4 +1,4 @@
-pyzmq==18.0.2
+pyzmq
 pandas==0.25.0
 networkx==2.3
 imageio
