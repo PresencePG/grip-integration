@@ -1,5 +1,5 @@
-#FROM slacgismo/gridlabd:200311
-FROM slacgismo/gridlabd:develop-200223
+FROM slacgismo/gridlabd:develop-200323
+#FROM slacgismo/gridlabd:032320
 
 RUN yum -y install curl
 
