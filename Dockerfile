@@ -1,4 +1,4 @@
-FROM slacgismo/gridlabd:develop
+FROM slacgismo/gridlabd:beauharnois-04
 
 RUN yum -y install curl
 
