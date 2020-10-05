@@ -1,6 +1,18 @@
-FROM slacgismo/gridlabd:beauharnois-04
+FROM slacgismo/gridlabd:beauharnois-11
 
 RUN yum -y install curl
+
+RUN yum -y install libffi-devel
+RUN cd /usr/local/src && \
+    curl https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz > Python-3.7.7.tgz && \
+    tar xzf Python-3.7.7.tgz && \
+    cd Python-3.7.7 && \
+    ./configure --enable-optimizations --enable-shared && \
+    make altinstall && \
+    /sbin/ldconfig /usr/local/lib && \
+    /usr/local/bin/python3 -m pip install matplotlib Pillow pandas numpy && \
+    cd /usr/local/src && \
+    rm -f Python-3.7.7.tgz
 
 # copy things to a build directory
 COPY . /opt/build
@@ -9,8 +21,8 @@ COPY . /opt/build
 WORKDIR /opt/build/python
 
 # install python requirements
-RUN pip3 install --upgrade pip
-RUN pip3 install -r py_requirements.txt
+RUN /usr/local/bin/python3 -m pip install --upgrade pip
+RUN /usr/local/bin/python3 -m pip install -r py_requirements.txt
 
 # install wget so that we can grab things
 RUN yum -y install wget
